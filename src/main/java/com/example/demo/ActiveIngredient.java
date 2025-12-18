@@ -4,9 +4,6 @@ public class ActiveIngredients{
     private Long id;
     private String name;
 
-    public ActiveIngredients(String name){
-        this.name=name;
-    }
     public Long getId(){
         return id;
     }
@@ -21,6 +18,14 @@ public class ActiveIngredients{
 
     public void setName(String name){
         this.name=name;
+    }
+
+    public ActiveIngredients(String name){
+        this.name=name;
+    }
+
+    public  ActiveIngredients(){
+
     }
 
 }
