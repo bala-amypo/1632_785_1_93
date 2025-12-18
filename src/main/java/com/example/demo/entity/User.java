@@ -16,5 +16,9 @@ public class User{
 
     }
 
-    public void setId(Long)
+    public String getId(){
+        return id;
+    }
+
+    public void setId(Long )
 }
