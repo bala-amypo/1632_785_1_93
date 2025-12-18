@@ -8,7 +8,10 @@ public class User{
     private String role;
 
     User(String name,String email, String password,String role){
-        
+        this.name=name;
+        this.email=name;
+
+
         
 
     }
