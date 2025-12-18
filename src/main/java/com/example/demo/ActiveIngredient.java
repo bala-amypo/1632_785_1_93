@@ -4,10 +4,9 @@ public class ActiveIngredients{
     private Long id;
     private String name;
 
-    ActiveIngredients(String name){
-        this.id=id;
+    public ActiveIngredients(String name){
         this.name=name;
     }
 
-    
+
 }
