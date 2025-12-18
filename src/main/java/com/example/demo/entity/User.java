@@ -6,4 +6,6 @@ public class User{
     private String email;
     private String password;
     private String role;
+
+    User(String name,String email)
 }
