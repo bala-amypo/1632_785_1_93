@@ -8,5 +8,6 @@ public class ActiveIngredients{
         this.id=id;
         this.name=name;
     }
+
     
 }
