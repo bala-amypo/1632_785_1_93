@@ -7,5 +7,9 @@ public class User{
     private String password;
     private String role;
 
-    User(String name,String email)
+    User(String name,String email, String password,String role){
+        
+        
+
+    }
 }
