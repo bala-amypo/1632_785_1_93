@@ -1,14 +1,24 @@
 package com.example.demo.entity;
+import java.util.Date;
 
-public class Medication{
-    private Long id;
-    private String name;
+import jakarta.persistence.Entity;
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
-    public 
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class StudentEntity{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+
+
+
     
-
-
-
-    
-
-}
+    }
