@@ -3,7 +3,7 @@ package com.example.demo.entity;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
+import jakarta.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
