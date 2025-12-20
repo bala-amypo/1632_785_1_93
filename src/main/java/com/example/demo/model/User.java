@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 @NoArgsConstructor
 
 public class User{
+    @Id
+    @Entity
 
     private Long id;
     private String name;
