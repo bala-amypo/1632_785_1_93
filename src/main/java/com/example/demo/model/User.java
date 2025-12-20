@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,7 +15,9 @@ public class User{
 
     private Long id;
     private String name;
+
     private String email;
+    @Column 
     private String password;
     private String role;  
 
