@@ -15,10 +15,10 @@ import jakarta.persistence.Entity;
 
 public class InteractionCheckResult{
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String medications;
     private String interaction;
-    prvaie LocalDateTime checkedAt;
-    
+    private LocalDateTime checkedAt;
+
 }
