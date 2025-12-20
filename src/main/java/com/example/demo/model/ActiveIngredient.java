@@ -1,31 +1,25 @@
-package com.example.demo.model;
+package com.example.demo.entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
-public class ActiveIngredients{
+public class User{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String name;
-
-    public Long getId(){
-        return id;
-    }
-
-    public void setId(Long id){
-        this.id=id;
-    }
-
-     public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
-        this.name=name;
-    }
-
-    public ActiveIngredients(String name){
-        this.name=name;
-    }
-
-    public  ActiveIngredients(){
-
-    }
+    @Column(name="email" unique = true)
+    private String email;
+    private String password;
+    private String role;  
 
 }
