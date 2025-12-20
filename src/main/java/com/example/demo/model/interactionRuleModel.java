@@ -12,7 +12,7 @@ import jakarta.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class InteractionRule{
+public class interactionRuleModel{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;

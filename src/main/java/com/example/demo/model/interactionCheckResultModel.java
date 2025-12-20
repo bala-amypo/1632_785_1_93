@@ -13,7 +13,7 @@ import jakarta.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class InteractionCheckResult{
+public class InteractionCheckResultModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
