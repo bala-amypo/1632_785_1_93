@@ -4,10 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entity.Usermodel;
+import com.example.demo.entity.UserModel;
 
 @Repository
 
-public interface StudentDetailRepository extends JpaRepository<StudentDetailEntity,Long>{
+public interface UserModelRepository extends JpaRepository<UserModel,Long>{
 
 }
