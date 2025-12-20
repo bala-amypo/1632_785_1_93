@@ -20,5 +20,5 @@ public class InteractionCheckResult{
     private String medications;
     private String interaction;
     prvaie LocalDateTime checkedAt;
-
+    
 }
