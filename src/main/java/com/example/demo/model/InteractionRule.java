@@ -16,7 +16,10 @@ public class InteractionRule{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private 
+    -----
+
+    private String severity;
+    private String description;
     
     
 
