@@ -12,14 +12,11 @@ import jakarta.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class userModel{
+public class ActiveIngredientModel{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    @Column(name="email" unique = true)
-    private String email;
-    private String password;
-    private String role;  
+    @Column(name="name" unique = true)
+    private String name;  
 
 }

@@ -17,6 +17,5 @@ public interface userService{
     UserModel GetData(int id);
 
     UserModel updateData(int id,UserModely entity);
-
-
+    
 }
