@@ -8,6 +8,6 @@ import com.example.demo.model.UserModel;
 
 @Repository
 
-public interface acticeIngredientModelRepository extends JpaRepository<UserModel,Long>{
+public interface UserModelRepository extends JpaRepository<UserModel,Long>{
 
 }
