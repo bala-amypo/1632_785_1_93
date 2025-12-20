@@ -12,7 +12,7 @@ import jakarta.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class User{
+public class ActiveIngredient{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
