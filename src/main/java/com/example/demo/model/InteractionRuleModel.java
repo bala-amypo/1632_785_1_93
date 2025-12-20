@@ -12,11 +12,11 @@ import jakarta.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class interactionRuleModel{
+public class InteractionRuleModel{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    -----
+    //-----
 
     private String severity;
     private String description;
