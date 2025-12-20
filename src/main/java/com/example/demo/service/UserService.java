@@ -4,7 +4,7 @@ import com.example.demo.model.UserModel;
 
 import java.util.List;
 
-public interface userService{
+public interface UserService{
 
     //method declarations
 
