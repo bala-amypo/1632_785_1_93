@@ -15,9 +15,9 @@ public class User{
 
     private Long id;
     private String name;
-
     private String email;
     @Column(name="email" unique='true')
+
     private String password;
     private String role;  
 
