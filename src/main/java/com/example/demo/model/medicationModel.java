@@ -12,7 +12,8 @@ import jakarta.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Medication{
+public class medicationModel
+{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
