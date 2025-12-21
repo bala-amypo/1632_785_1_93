@@ -24,5 +24,4 @@ public class ActiveIngredient{
     public ActiveIngredient(String name){
         this.name=name;
     }
-
 }
