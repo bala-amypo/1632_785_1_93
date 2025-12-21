@@ -1,23 +1,23 @@
-package com.example.demo.model;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import jakarta.persistence.Id;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-@Entity
-@Table(name="active_ingredients")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+// package com.example.demo.model;
+// import jakarta.persistence.GeneratedValue;
+// import jakarta.persistence.GenerationType;
+// import lombok.Data;
+// import lombok.AllArgsConstructor;
+// import lombok.NoArgsConstructor;
+// import jakarta.persistence.Id;
+// import jakarta.persistence.Column;
+// import jakarta.persistence.Entity;
+// @Entity
+// @Table(name="active_ingredients")
+// @Data
+// @AllArgsConstructor
+// @NoArgsConstructor
 
-public class ActiveIngredient{
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
-    @Column(unique = true)
-    private String name;  
+// public class ActiveIngredient{
+//     @Id
+//     @GeneratedValue(strategy=GenerationType.IDENTITY)
+//     private Long id;
+//     @Column(unique = true)
+//     private String name;  
 
-}
+// }
