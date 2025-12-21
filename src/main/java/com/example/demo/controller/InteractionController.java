@@ -20,14 +20,14 @@ public class InteractionController {
         this.interactionService = interactionService;
     }
 
-    // POST /interact/check
+    /
     @PostMapping("/interact/check")
     public InteractionCheckResult checkInteractions(
             @RequestBody List<Long> medicationIds) {
         return interactionService.checkInteractions(medicationIds);
     }
 
-    // GET /interact/result/{id}
+   
     @GetMapping("/interact/result/{id}")
     public InteractionCheckResult getResult(
             @PathVariable Long id) {
