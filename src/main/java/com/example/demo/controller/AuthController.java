@@ -12,10 +12,10 @@ import com.example.demo.service.UserService;
 @RestController
 
 public class AuthController{
-    @Autowired StudentService user;
+    @Autowired UserService us;
 
-    @PostMapping("/re")
-    public UserModel sendData(@RequestBody UserModel auth){
-        return user.postData(auth);
+    @PostMapping("/register")
+    public UserModel register(@RequestBody UserModel user){
+        return user.postData(us);
 
     }
