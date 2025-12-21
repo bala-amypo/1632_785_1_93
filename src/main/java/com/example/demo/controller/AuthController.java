@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.example.demo.model.UserModel;
+import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 
 
@@ -14,7 +14,7 @@ public class AuthController{
 @Autowired UserService userService;
 
     @PostMapping("/register")
-    public UserModel register(@RequestBody UserModel user){
+    public User register(@RequestBody User user){
         return userService.registerUser(user);
 
     }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.service.UserService;
 
-import com.example.demo.entity.UserEntity;
+import com.example.demo.model.User;
 
 import com.example.demo.repository.UserRepository;
 
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService{
 
 
     @Override
-    public UserEntity GetData(int id){
+    public User GetData(int id){
         return student.findById(id).orElse(null);
     }
 }
