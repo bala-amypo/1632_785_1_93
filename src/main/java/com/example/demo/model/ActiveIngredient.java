@@ -21,4 +21,8 @@ public class ActiveIngredient{
     @Column(unique = true)
     private String name;  
 
+    public ActiveIngredient(String name){
+        this.name=name;
+    }
+
 }
