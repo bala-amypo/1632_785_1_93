@@ -19,7 +19,18 @@ public class Medication{
     private Long id;
     private String name;
     @Column(name= "ingredient_name")
-    private Set<String> ingredients = new 
-    
+    private Set<String> ingredients = new HashSet<>();
+
+    public Medications(String name){
+        this.name=name;
+        this.ingrediens=new HashSet<>();
+    }
+
+    public void addIngredient(String ingredient){
+        this.ingredients.add(ingredient);
+    }
+     public void removeIngredient(String ingredient){
+        this.ingredients.remove(ingredient);
+    }
 
 }
