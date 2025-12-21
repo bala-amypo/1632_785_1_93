@@ -9,17 +9,15 @@ import com.example.demo.service.UserService;
 import com.example.demo.model.User;
 
 import com.example.demo.repository.UserRepository;
-
-
 @Service
-
-
 public class UserServiceImpl implements UserService{
-    @Autowired UserRepository student;
+    @Autowired 
+    private UserRepository userRepository;
 
 
     @Override
-    public User GetData(int id){
+    public User registerUser(User user){
+    if(use.getRole())
         return student.findById(id).orElse(null);
     }
 }
