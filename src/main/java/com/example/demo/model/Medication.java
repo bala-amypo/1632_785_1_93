@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
-import jakarta.persistence.Table;
+import jakarta.persistence.ElementCollection;
 import java.util.HashSet;
 import java.util.Set;
 
