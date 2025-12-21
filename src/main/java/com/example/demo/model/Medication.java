@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 
 import jakarta.persistence.Entity;
 @Entity
+@Table(name="medications")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,8 +18,8 @@ public class Medication{
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String name;
-
-    //------
+    @Column(name= "ingredient_name")
+    private Set<String> ingredients = new 
     
 
 }
