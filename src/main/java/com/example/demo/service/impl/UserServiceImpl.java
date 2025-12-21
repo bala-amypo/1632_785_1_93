@@ -16,6 +16,7 @@ public class UserServiceImpl implements UserService{
     if(use.getRole()==null){
         user.setRole("USER");
     }
+    return userRepository.save(user);
 }
     @Override
     public User findByEmail(String email){
