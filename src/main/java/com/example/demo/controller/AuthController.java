@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.example.demo.entity.StudentEntity;
-import com.example.demo.service.StudentService;
-import java.util.List;
+import com.example.demo.model.UserModel;
+import com.example.demo.service.UserService;
+
 
 @RestController
 
@@ -15,7 +15,7 @@ public class AuthController{
     @Autowired StudentService user;
 
     @PostMapping("/post")
-    public UserM sendData(@RequestBody UserEntity auth){
+    public UserModel sendData(@RequestBody UserModel auth){
         return user.postData(auth);
 
     }
