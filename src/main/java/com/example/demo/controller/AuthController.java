@@ -18,3 +18,5 @@ public class AuthController{
         return userService.registerUser(user);
 
     }
+@
+}
