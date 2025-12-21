@@ -17,7 +17,15 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User registerUser(User user){
-    if(use.getRole())
-        return student.findById(id).orElse(null);
-    }
+    if(use.getRole()==null){
+        user.setRole("USER");
+    }
+}
+    @Override
+    public User findByEmail(String email){
+        return userRepository.findByEmail(email);
+
+    }
+        
+    
 }
