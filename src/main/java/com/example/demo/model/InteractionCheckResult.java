@@ -23,4 +23,14 @@ public class InteractionCheckResult{
     private String interaction;
     private LocalDateTime checkedAt;
 
+    public InteractionCheckResult(String medications,String interactions){
+        this.medications=medications;
+        this.interactions=interactions;
+    }
+
+    @PrePersist
+    public void setCheckedAt(){
+        this.CheckedAt = 
+    }
+
 }
