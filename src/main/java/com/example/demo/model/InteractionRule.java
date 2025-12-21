@@ -18,11 +18,13 @@ public class InteractionRule{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    //-----
-
     private String severity;
     private String description;
-    
-    
 
+    public InteractionRule(String severity, String description) {
+    this.ingredientA = ingredientA;
+    this.ingredientB = ingredientB;
+    this.severity = severity;
+    this.description = description;
+ }
 }
