@@ -14,7 +14,7 @@ import com.example.demo.service.UserService;
 public class AuthController{
     @Autowired StudentService user;
 
-    @PostMapping("/post")
+    @PostMapping("/re")
     public UserModel sendData(@RequestBody UserModel auth){
         return user.postData(auth);
 
