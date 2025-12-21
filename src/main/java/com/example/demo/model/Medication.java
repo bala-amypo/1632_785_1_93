@@ -27,7 +27,7 @@ public class Medication{
 
     public Medication(String name){
         this.name=name;
-        this.ingrediens=new HashSet<>();
+        this.ingredients=new HashSet<>();
     }
 
     public void addIngredient(String ingredient){
