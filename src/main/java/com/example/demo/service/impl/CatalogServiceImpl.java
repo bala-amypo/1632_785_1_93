@@ -33,7 +33,6 @@ public CatalogServiceImpl(ActiveIngredientRepository ingredientRepository, Medic
     @Override
     public Medication addMedication(Medication medication) {
 
-        // Rule: medication must have at least one ingredient
         if (medication.getIngredients() == null || medication.getIngredients().isEmpty()) {
             throw new RuntimeException("Medication must contain at least one ingredient");
         }
