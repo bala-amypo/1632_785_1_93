@@ -8,7 +8,8 @@ import com.example.demo.model.UserModel;
 
 @Repository
 
-public interface ActiveIngredientModelRepository extends JpaRepository<UserModel,Long>{
+public interface ActiveIngredientModelRepository extends JpaRepository<UserModel,Long>
+{
     boolean existByName(String name);
 
 }
