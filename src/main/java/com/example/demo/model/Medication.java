@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
+import jakarta.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,6 +24,7 @@ public class Medication{
     private Long id;
     private String name;
     @Column(name= "ingredient_name")
+    @ElementCollection
     private Set<String> ingredients = new HashSet<>();
 
     public Medication(String name){
