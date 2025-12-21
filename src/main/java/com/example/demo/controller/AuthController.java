@@ -11,8 +11,7 @@ import com.example.demo.service.UserService;
 
 @RestController
 public class AuthController{
-    @Autowired 
-    private UserService userService;
+@Autowired UserService userService;
 
     @PostMapping("/register")
     public UserModel register(@RequestBody UserModel user){
