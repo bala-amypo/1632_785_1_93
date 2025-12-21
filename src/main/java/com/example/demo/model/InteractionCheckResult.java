@@ -30,7 +30,7 @@ public class InteractionCheckResult{
 
     @PrePersist
     public void setCheckedAt(){
-        this.CheckedAt = 
+        this.CheckedAt =  LocalDateTime.now();
     }
 
 }
