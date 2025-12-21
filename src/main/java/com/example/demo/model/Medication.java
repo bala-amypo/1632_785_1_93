@@ -21,7 +21,7 @@ public class Medication{
     @Column(name= "ingredient_name")
     private Set<String> ingredients = new HashSet<>();
 
-    public Medications(String name){
+    public Medication(String name){
         this.name=name;
         this.ingrediens=new HashSet<>();
     }
