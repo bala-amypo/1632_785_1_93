@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
-import java.uti.HashSet;
-import java.uti.Set;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 @Entity
