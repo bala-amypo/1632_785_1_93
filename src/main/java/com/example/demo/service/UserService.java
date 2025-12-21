@@ -4,16 +4,8 @@ import com.example.demo.model.User;
 
 public interface UserService{
 
-    //method declarations
+    User registerUser(User user);
 
-    UserModel postData(UserModel stu);     
-
-    List<UserModel>getAllData();
-
-    String DeleteData(int id);
-
-    UserModel GetData(int id);
-
-    UserModel updateData(int id,UserModely entity);
-    
+    User findByEmail(String email);
+  
 }
