@@ -22,6 +22,11 @@ public class AuthController{
 public String login(@RequestBody User user){
     User dbUser=userService.findByEmail(user.getEmail());
 
-    id(D)
+    id(dbUser != null && dbUser.getPassword().equals(user.getPassword())){
+        return "Login successful";
+    }
+    else{
+        return "Invalid Credentials";
+    }
 }
 }
