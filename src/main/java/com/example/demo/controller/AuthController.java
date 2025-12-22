@@ -24,7 +24,7 @@ public class AuthController {
 
         User dbUser = userService.findByEmail(user.getEmail());
 
-        if (adbUser != null && dbUser.getPassword().equals(user.getPassword())) {
+        if (dbUser != null && dbUser.getPassword().equals(user.getPassword())) {
             return "Login Successful";
         }
         return "Invalid Credentials";
