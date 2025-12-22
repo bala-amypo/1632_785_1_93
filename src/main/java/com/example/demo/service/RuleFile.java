@@ -1,12 +1,12 @@
-package com.example.demo.service;
+// package com.example.demo.service;
 
-import java.util.List;
+// import java.util.List;
 
-import com.example.demo.model.InteractionRule;
+// import com.example.demo.model.InteractionRule;
 
-public interface RuleService {
+// public interface RuleService {
 
-    InteractionRule addRule(InteractionRule rule);
+//     InteractionRule addRule(InteractionRule rule);
 
-    List<InteractionRule> getAllRules();
-}
+//     List<InteractionRule> getAllRules();
+// }
