@@ -24,6 +24,9 @@ public class ActiveIngredient{
     public ActiveIngredient(String name){
         this.name=name;
     }
+
+    @ManyToMany(mappedBy = "ingredients")
+    private Set<Medication> med;
 }
 
 
@@ -50,6 +53,5 @@ public class ActiveIngredient{
 //     @Column(unique = true)
 //     private String name;
 
-//     @ManyToMany(mappedBy = "ingredients")
-//     private Set<Medication> med;
+
 // }
