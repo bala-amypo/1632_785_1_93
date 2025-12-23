@@ -26,6 +26,6 @@ public class ActiveIngredient{
     }
 
     @ManyToMany(mappedBy = "ingredients")
-    private List<Medication> med;
+    private List<Medication>med;
 }
 
