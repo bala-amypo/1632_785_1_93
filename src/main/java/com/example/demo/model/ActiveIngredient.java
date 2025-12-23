@@ -27,6 +27,7 @@ public class ActiveIngredient{
     }
 
     //@ManyToMany(mappedBy = "ingredients")
-    //private List<Medication>med;
+    List<InteractionRule> findByIngredientA_Id(Long ingredientId);
+
 }
 
