@@ -50,7 +50,6 @@ public class ActiveIngredient{
 //     @Column(unique = true)
 //     private String name;
 
-//     // Many-to-many with Medication
 //     @ManyToMany(mappedBy = "ingredients")
-//     private Set<Medication> medications;
+//     private Set<Medication> med;
 // }
