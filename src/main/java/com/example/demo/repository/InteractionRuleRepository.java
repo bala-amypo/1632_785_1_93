@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.demo.model.InteractionRule;
 
 public interface InteractionRuleRepository extends JpaRepository<InteractionRule, Long> {
-        List<InteractionRule> findByIngredientId(Long ingredientId);
+        List<InteractionRule> findByIngredientA_Id(Long ingredientId);
 }
+
