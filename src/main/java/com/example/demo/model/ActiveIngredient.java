@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import jakarta.persistence.MantToMany;
+//import jakarta.persistence.MantToMany;
 @Entity
 @Table(name="active_ingredients")
 @Data
@@ -26,7 +26,7 @@ public class ActiveIngredient{
         this.name=name;
     }
 
-    @ManyToMany(mappedBy = "ingredients")
+    //@ManyToMany(mappedBy = "ingredients")
     private List<Medication>med;
 }
 
