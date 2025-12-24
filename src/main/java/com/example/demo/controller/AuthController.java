@@ -15,8 +15,8 @@ public class AuthController {
     private UserService userService;
 
     @PostMapping("/register")
-    public User register(@RequestBody User user) {
-        return userService.registerUser(user);
+    public User register(@RequestBody User us) {
+        return userService.registerUser(us);
     }
 
     @PostMapping("/login")
@@ -27,6 +27,7 @@ public class AuthController {
         if (dbUser != null && dbUser.getPassword().equals(user.getPassword())) {
             return "Login Successful";
         }
+        
         return "Invalid Credentials";
     }
 }

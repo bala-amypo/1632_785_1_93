@@ -33,7 +33,6 @@ public class CatalogController {
         return catalogService.addMedication(medication);
     }
 
-
     @GetMapping("/catalog/medications")
     public List<Medication> getAllMedications() {
         return catalogService.getAllMedications();
