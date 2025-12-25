@@ -29,6 +29,6 @@ public class InteractionController {
    
     @GetMapping("/interact/result/{id}")
     public InteractionCheckResult getResult(@PathVariable Long id) {
-        return interactionService.getResultById(id);
+        return interactionService.getResult(id);
     }
 }
