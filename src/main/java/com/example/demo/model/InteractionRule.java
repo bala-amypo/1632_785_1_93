@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
-
+import jakarta.persistence.ManyToOne;
 
 @Entity
 @Table(name = "interaction_rules")
@@ -19,9 +19,9 @@ public class InteractionRule{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    
-    private String ingredientA;
-    private String ingredientB;
+    @ManyToOne
+    private ActiveIngredient ingredientA;
+    private ActiveIngredient ingredientB;
     private String severity;
     private String description;
 
