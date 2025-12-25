@@ -21,14 +21,14 @@ public InteractionRule addRule(InteractionRule rule) {
 if (!rule.getSeverity().equals("MINOR") &&!rule.getSeverity().equals("MODERATE") &&
 !rule.getSeverity().equals("MAJOR")) {
 throw new IllegalArgumentException("Invalid severity");
-    }
+}
 
-     ActiveIngredient a = rule.getIngredientA();
-     ActiveIngredient b = rule.getIngredientB();
+ActiveIngredient a = rule.getIngredientA();
+ActiveIngredient b = rule.getIngredientB();
 
     Optional<InteractionRule> ruleAB =ruleRepository.findByIngredientAAndIngredientB(a, b);
     Optional<InteractionRule> ruleBA =ruleRepository.findByIngredientAAndIngredientB(b, a);
-     if (ruleAB.isPresent() || ruleBA.isPresent()) {
+    if (ruleAB.isPresent() || ruleBA.isPresent()) {
         throw new IllegalArgumentException("Ingredient pairing already exists");
     }
     return ruleRepository.save(rule);
