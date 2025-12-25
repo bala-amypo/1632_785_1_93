@@ -18,9 +18,10 @@ public class RuleServiceImpl implements RuleService {
 
 @Override
 public InteractionRule addRule(InteractionRule rule) {
-if (!rule.getSeverity().equals("MINOR") &&!rule.getSeverity().equals("MODERATE") &&
-!rule.getSeverity().equals("MAJOR")) {
-throw new IllegalArgumentException("Invalid severity");
+    if (!rule.getSeverity().equals("MINOR") &&!rule.getSeverity().equals("MODERATE") &&
+    !rule.getSeverity().equals("MAJOR")) {
+
+    throw new IllegalArgumentException("Invalid severity");
 }
 
 ActiveIngredient a = rule.getIngredientA();
