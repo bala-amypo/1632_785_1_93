@@ -63,7 +63,7 @@ public class InteractionCheckResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable=
+    @Column(nullable=false)
     private String medications;
 
     @Column(columnDefinition = "TEXT")
@@ -74,37 +74,14 @@ public class InteractionCheckResult {
     public InteractionCheckResult() {
     }
 
-    public InteractionCheckResult(String medications, String interactions) {
-        this.medications = medications;
-        this.interactions = interactions;
-    }
+    // public InteractionCheckResult(String medications, String interactions) {
+    //     this.medications = medications;
+    //     this.interactions = interactions;
+    // }
 
     @PrePersist
-    public void onCreate() {
+    public void checkedAt () {
         this.checkedAt = LocalDateTime.now();
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getMedications() {
-        return medications;
-    }
-
-    public void setMedications(String medications) {
-        this.medications = medications;
-    }
-
-    public String getInteractions() {
-        return interactions;
-    }
-
-    public void setInteractions(String interactions) {
-        this.interactions = interactions;
-    }
-
-    public LocalDateTime getCheckedAt() {
-        return checkedAt;
-    }
+  
 }
