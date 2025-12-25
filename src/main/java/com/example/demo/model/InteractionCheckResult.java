@@ -63,7 +63,7 @@ public class InteractionCheckResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable=
     private String medications;
 
     @Column(columnDefinition = "TEXT")
