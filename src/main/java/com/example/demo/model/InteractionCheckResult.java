@@ -50,8 +50,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 import jakarta.persistence.PrePersist;
 
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "interaction_check_results")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class InteractionCheckResult {
 
     @Id
