@@ -13,34 +13,32 @@ import com.example.demo.service.CatalogService;
 @Service
 public class CatalogServiceImpl implements CatalogService {
 
-    private final ActiveIngredientRepository ingredientRepository;
-    private final MedicationRepository medicationRepository;
+private final ActiveIngredientRepository ingredientRepository;
+private final MedicationRepository medicationRepository;
 
-    public CatalogServiceImpl(ActiveIngredientRepository ingredientRepository,
-                              MedicationRepository medicationRepository) {
-        this.ingredientRepository = ingredientRepository;
-        this.medicationRepository = medicationRepository;
+public CatalogServiceImpl(ActiveIngredientRepository ingredientRepository, MedicationRepository medicationRepository) {
+    this.ingredientRepository = ingredientRepository;
+    this.medicationRepository = medicationRepository;
+}
+
+@Override
+public ActiveIngredient addIngredient(ActiveIngredient ingredient) {
+    if (ingredientRepository.existsByName(ingredient.getName())) {
+        throw new RuntimeException("Ingredient already exists");
     }
+    return ingredientRepository.save(ingredient);
+}
 
-    @Override
-    public ActiveIngredient addIngredient(ActiveIngredient ingredient) {
-        if (ingredientRepository.existsByName(ingredient.getName())) {
-            throw new RuntimeException("Ingredient already exists");
-        }
-        return ingredientRepository.save(ingredient);
+@Override
+public Medication addMedication(Medication medication) {
+    if (medication.getIngredients() == null ||medication.getIngredients().isEmpty()) {
+        throw new RuntimeException("Medication must contain at least one ingredient");
     }
+    return medicationRepository.save(medication);
+}
 
-    @Override
-    public Medication addMedication(Medication medication) {
-        if (medication.getIngredients() == null ||
-            medication.getIngredients().isEmpty()) {
-            throw new RuntimeException("Medication must contain at least one ingredient");
-        }
-        return medicationRepository.save(medication);
-    }
-
-    @Override
-    public List<Medication> getAllMedications() {
-        return medicationRepository.findAll();
+@Override
+public List<Medication> getAllMedications() {
+    return medicationRepository.findAll();
     }
 }
