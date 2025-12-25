@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User registerUser(User user) {
 
-        // Default role assignment
+        
         if (user.getRole() == null) {
             user.setRole("USER");
         }

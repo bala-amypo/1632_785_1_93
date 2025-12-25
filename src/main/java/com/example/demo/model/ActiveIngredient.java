@@ -26,7 +26,7 @@ public class ActiveIngredient {
     private String name;
 
     
-    public ActiveIngredient(String name) {
-        this.name = name;
-    }
+    // public ActiveIngredient(String name) {
+    //     this.name = name;
+    // }
 }
