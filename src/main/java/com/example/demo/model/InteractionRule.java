@@ -23,10 +23,5 @@ public class InteractionRule{
     private String severity;
     private String description;
 
-    public InteractionRule(String ingredientA,String ingredientB,String severity, String description) {
-    this.ingredientA = ingredientA;
-    this.ingredientB = ingredientB;
-    this.severity = severity;
-    this.description = description;
- }
+   
 }
