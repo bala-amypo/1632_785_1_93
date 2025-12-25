@@ -1,5 +1,4 @@
 package com.example.demo.controller;
-
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,14 +18,12 @@ public class RuleController {
         this.ruleService = ruleService;
     }
 
- 
     @PostMapping("/rules")
     public InteractionRule addRule(
             @RequestBody InteractionRule rule) {
         return ruleService.addRule(rule);
     }
-
-   
+    
     @GetMapping("/rules")
     public List<InteractionRule> getAllRules() {
         return ruleService.getAllRules();
