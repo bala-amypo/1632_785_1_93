@@ -31,8 +31,7 @@ public class InteractionCheckResult {
 
     private LocalDateTime checkedAt;
 
-    public InteractionCheckResult() {
-    }
+    
 
     // public InteractionCheckResult(String medications, String interactions) {
     //     this.medications = medications;
