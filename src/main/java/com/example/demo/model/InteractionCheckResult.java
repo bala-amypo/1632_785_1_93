@@ -42,6 +42,5 @@ public class InteractionCheckResult {
     @PrePersist
     public void checkedAt () {
         this.checkedAt = LocalDateTime.now();
-    }
-  
+    } 
 }
