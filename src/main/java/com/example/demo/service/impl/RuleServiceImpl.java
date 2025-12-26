@@ -13,24 +13,22 @@ import com.example.demo.service.RuleService;
 public class RuleServiceImpl implements RuleService {
 
     @Autowired
-    private InteractionRuleRepository interactionRuleRepository;
+    private InteractionRuleRepository ruleRepository;
 
-    // ===== EXISTING METHODS (KEEP AS IS) =====
-
-    @Override
-    public InteractionRule getRuleById(Long id) {
-        return interactionRuleRepository.findById(id).orElse(null);
-    }
-
-    // ===== REQUIRED BY INTERFACE (ADDED METHODS) =====
-
+    // ✅ REQUIRED BY INTERFACE
     @Override
     public InteractionRule addRule(InteractionRule rule) {
-        return interactionRuleRepository.save(rule);
+        return ruleRepository.save(rule);
     }
 
+    // ✅ REQUIRED BY INTERFACE
     @Override
     public List<InteractionRule> getAllRules() {
-        return interactionRuleRepository.findAll();
+        return ruleRepository.findAll();
+    }
+
+    // ❌ NOT in interface → NO @Override
+    public InteractionRule getRuleById(Long id) {
+        return ruleRepository.findById(id).orElse(null);
     }
 }
