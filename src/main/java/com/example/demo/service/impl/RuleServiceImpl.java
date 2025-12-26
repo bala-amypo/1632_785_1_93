@@ -15,9 +15,20 @@ public class RuleServiceImpl implements RuleService {
     @Autowired
     private InteractionRuleRepository interactionRuleRepository;
 
-    // EXISTING METHODS — keep them
+    // ===== EXISTING METHODS (KEEP AS IS) =====
 
-    // ✅ REQUIRED by interface (ADD THIS)
+    @Override
+    public InteractionRule getRuleById(Long id) {
+        return interactionRuleRepository.findById(id).orElse(null);
+    }
+
+    // ===== REQUIRED BY INTERFACE (ADDED METHODS) =====
+
+    @Override
+    public InteractionRule addRule(InteractionRule rule) {
+        return interactionRuleRepository.save(rule);
+    }
+
     @Override
     public List<InteractionRule> getAllRules() {
         return interactionRuleRepository.findAll();
