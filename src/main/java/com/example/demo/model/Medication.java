@@ -1,53 +1,53 @@
+
+
 package com.example.demo.model;
 
+import jakarta.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "medications")
 public class Medication {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // EXISTING (do not remove)
-    private Set<ActiveIngredient> activeIngredients;
+    private String name;
 
-    // REQUIRED BY TESTS
-    private String medication;
-    private String ingredients;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        name = "medication_ingredients",
+        joinColumns = @JoinColumn(name = "medication_id"),
+        inverseJoinColumns = @JoinColumn(name = "ingredient_id")
+    )
+    private Set<ActiveIngredient> ingredients = new HashSet<>();
 
-    public Medication() {
+    // No-arg constructor (Rule 2.3)
+    public Medication() {}
+
+    // Field constructor (Rule 2.3)
+    public Medication(String name) {
+        this.name = name;
+        this.ingredients = new HashSet<>();
     }
 
-    public Long getId() {
-        return id;
+    // Helper methods for Many-to-Many management (Rule 2.3 and Test 30)
+    public void addIngredient(ActiveIngredient ingredient) {
+        this.ingredients.add(ingredient);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void removeIngredient(ActiveIngredient ingredient) {
+        this.ingredients.remove(ingredient);
     }
 
-    // EXISTING LOGIC (keep)
-    public Set<ActiveIngredient> getActiveIngredients() {
-        return activeIngredients;
-    }
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setActiveIngredients(Set<ActiveIngredient> activeIngredients) {
-        this.activeIngredients = activeIngredients;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    // REQUIRED BY TESTS
-    public String getMedication() {
-        return medication;
-    }
-
-    public void setMedication(String medication) {
-        this.medication = medication;
-    }
-
-    // REQUIRED BY TESTS
-    public String getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
-    }
+    public Set<ActiveIngredient> getIngredients() { return ingredients; }
+    public void setIngredients(Set<ActiveIngredient> ingredients) { this.ingredients = ingredients; }
 }

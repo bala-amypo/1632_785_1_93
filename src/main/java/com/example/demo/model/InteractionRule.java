@@ -1,33 +1,50 @@
+
 package com.example.demo.model;
 
-public class InteractionRule {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "interaction_rules")
+public class InteractionRule {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // REQUIRED BY TESTS
-    private String rule;
+    @ManyToOne
+    @JoinColumn(name = "ingredient_a_id")
+    private ActiveIngredient ingredientA;
 
-    public InteractionRule() {
+    @ManyToOne
+    @JoinColumn(name = "ingredient_b_id")
+    private ActiveIngredient ingredientB;
+
+    private String severity; // MINOR, MODERATE, MAJOR
+    private String description;
+
+    // No-arg constructor (Rule 2.4)
+    public InteractionRule() {}
+
+    // Field constructor (Rule 2.4)
+    public InteractionRule(ActiveIngredient ingredientA, ActiveIngredient ingredientB, String severity, String description) {
+        this.ingredientA = ingredientA;
+        this.ingredientB = ingredientB;
+        this.severity = severity;
+        this.description = description;
     }
 
-    public InteractionRule(String rule) {
-        this.rule = rule;
-    }
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public Long getId() {
-        return id;
-    }
+    public ActiveIngredient getIngredientA() { return ingredientA; }
+    public void setIngredientA(ActiveIngredient ingredientA) { this.ingredientA = ingredientA; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public ActiveIngredient getIngredientB() { return ingredientB; }
+    public void setIngredientB(ActiveIngredient ingredientB) { this.ingredientB = ingredientB; }
 
-    // REQUIRED BY TESTS
-    public String getRule() {
-        return rule;
-    }
+    public String getSeverity() { return severity; }
+    public void setSeverity(String severity) { this.severity = severity; }
 
-    public void setRule(String rule) {
-        this.rule = rule;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 }

@@ -1,36 +1,30 @@
+
 package com.example.demo.model;
 
-public class ActiveIngredient {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "active_ingredients")
+public class ActiveIngredient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // REQUIRED BY TESTS
+    @Column(unique = true)
     private String name;
 
-    // No-arg constructor (MANDATORY)
-    public ActiveIngredient() {
-    }
+    // No-arg constructor (Rule 2.2)
+    public ActiveIngredient() {}
 
-    // Constructor used by tests
+    // Field constructor (Rule 2.2)
     public ActiveIngredient(String name) {
         this.name = name;
     }
 
-    // Existing getters/setters
-    public Long getId() {
-        return id;
-    }
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    // REQUIRED BY TESTS
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 }
