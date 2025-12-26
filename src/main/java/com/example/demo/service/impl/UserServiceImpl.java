@@ -77,40 +77,31 @@
 // }
 
 
-
 package com.example.demo.service.impl;
-
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.InteractionCheckResult;
-import com.example.demo.repository.InteractionCheckResultRepository;
-import com.example.demo.service.InteractionService;
+import com.example.demo.model.User;
+import com.example.demo.repository.UserRepository;
+import com.example.demo.service.UserService;
 
 @Service
-public class InteractionServiceImpl implements InteractionService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
-    private InteractionCheckResultRepository resultRepository;
+    private UserRepository userRepository;
 
     @Override
-    public InteractionCheckResult checkInteractions(List<Long> medicationIds) {
-
-        // Dummy but valid result for tests
-        InteractionCheckResult result =
-                new InteractionCheckResult(
-                        medicationIds.toString(),
-                        "{\"interactions\": []}"
-                );
-
-        return resultRepository.save(result);
+    public User registerUser(User user) {
+        if (user.getRole() == null) {
+            user.setRole("USER");
+        }
+        return userRepository.save(user);
     }
 
     @Override
-    public InteractionCheckResult getResult(Long resultId) {
-        return resultRepository.findById(resultId)
-                .orElseThrow(() -> new RuntimeException("Result not found"));
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }
