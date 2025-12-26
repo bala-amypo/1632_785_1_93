@@ -2,32 +2,38 @@ package com.example.demo.model;
 
 public class InteractionCheckResult {
 
-    private Long id;
+    private String medications;
+    private String interactions;
 
-    // REQUIRED BY TESTS
-    private String result;
-
+    // EXISTING no-arg constructor
     public InteractionCheckResult() {
     }
 
-    public InteractionCheckResult(String result) {
-        this.result = result;
+    // EXISTING single-arg constructor (do not remove)
+    public InteractionCheckResult(String message) {
+        this.interactions = message;
     }
 
-    public Long getId() {
-        return id;
+    // ✅ REQUIRED by tests (ADD THIS)
+    public InteractionCheckResult(String medications, String interactions) {
+        this.medications = medications;
+        this.interactions = interactions;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    // getters & setters
+    public String getMedications() {
+        return medications;
     }
 
-    // REQUIRED BY TESTS
-    public String getResult() {
-        return result;
+    public void setMedications(String medications) {
+        this.medications = medications;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public String getInteractions() {
+        return interactions;
+    }
+
+    public void setInteractions(String interactions) {
+        this.interactions = interactions;
     }
 }
