@@ -43,56 +43,56 @@
 
 
 
-package com.example.demo.model;
+// package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.JoinColumn;
+// import jakarta.persistence.Entity;
+// import jakarta.persistence.Table;
+// import jakarta.persistence.Id;
+// import jakarta.persistence.GeneratedValue;
+// import jakarta.persistence.GenerationType;
+// import jakarta.persistence.ManyToMany;
+// import jakarta.persistence.JoinTable;
+// import jakarta.persistence.JoinColumn;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+// import lombok.Data;
+// import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
+// import java.util.HashSet;
+// import java.util.Set;
 
-@Entity
-@Table(name = "medications")
-@Data
-@NoArgsConstructor
-public class Medication {
+// @Entity
+// @Table(name = "medications")
+// @Data
+// @NoArgsConstructor
+// public class Medication {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
 
-    private String name;
+//     private String name;
 
-    // Many-to-Many relationship required by tests
-    @ManyToMany
-    @JoinTable(
-        name = "medication_ingredients",
-        joinColumns = @JoinColumn(name = "medication_id"),
-        inverseJoinColumns = @JoinColumn(name = "ingredient_id")
-    )
-    private Set<ActiveIngredient> ingredients = new HashSet<>();
+//     // Many-to-Many relationship required by tests
+//     @ManyToMany
+//     @JoinTable(
+//         name = "medication_ingredients",
+//         joinColumns = @JoinColumn(name = "medication_id"),
+//         inverseJoinColumns = @JoinColumn(name = "ingredient_id")
+//     )
+//     private Set<ActiveIngredient> ingredients = new HashSet<>();
 
-    // Constructor used in test cases
-    public Medication(String name) {
-        this.name = name;
-        this.ingredients = new HashSet<>();
-    }
+//     // Constructor used in test cases
+//     public Medication(String name) {
+//         this.name = name;
+//         this.ingredients = new HashSet<>();
+//     }
 
-    // Helper methods REQUIRED by tests
-    public void addIngredient(ActiveIngredient ingredient) {
-        this.ingredients.add(ingredient);
-    }
+//     // Helper methods REQUIRED by tests
+//     public void addIngredient(ActiveIngredient ingredient) {
+//         this.ingredients.add(ingredient);
+//     }
 
-    public void removeIngredient(ActiveIngredient ingredient) {
-        this.ingredients.remove(ingredient);
-    }
-}
+//     public void removeIngredient(ActiveIngredient ingredient) {
+//         this.ingredients.remove(ingredient);
+//     }
+// }
