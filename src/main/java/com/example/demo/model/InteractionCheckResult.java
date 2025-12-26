@@ -33,10 +33,10 @@ public class InteractionCheckResult {
 
     
 
-    // public InteractionCheckResult(String medications, String interactions) {
-    //     this.medications = medications;
-    //     this.interactions = interactions;
-    // }
+    public InteractionCheckResult(String medications, String interactions) {
+        this.medications = medications;
+        this.interactions = interactions;
+    }
 
     @PrePersist
     public void checkedAt () {
