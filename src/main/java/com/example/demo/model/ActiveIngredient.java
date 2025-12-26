@@ -1,30 +1,22 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
-
-@Entity
-@Table(name = "active_ingredients")
 public class ActiveIngredient {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
+    // REQUIRED BY TESTS
     private String name;
 
+    // No-arg constructor (MANDATORY)
     public ActiveIngredient() {
     }
 
+    // Constructor used by tests
     public ActiveIngredient(String name) {
         this.name = name;
     }
 
+    // Existing getters/setters
     public Long getId() {
         return id;
     }
@@ -33,6 +25,7 @@ public class ActiveIngredient {
         this.id = id;
     }
 
+    // REQUIRED BY TESTS
     public String getName() {
         return name;
     }

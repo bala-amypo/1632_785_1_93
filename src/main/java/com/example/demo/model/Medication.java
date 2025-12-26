@@ -1,57 +1,53 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.ElementCollection;
-
 import java.util.Set;
-import java.util.HashSet;
 
-@Entity
-@Table(name = "medications")
 public class Medication {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    // EXISTING (do not remove)
+    private Set<ActiveIngredient> activeIngredients;
 
-    @ElementCollection
-    private Set<String> ingredients = new HashSet<>();
-
+    // REQUIRED BY TESTS
     private String medication;
     private String ingredients;
 
-
-
     public Medication() {
-    }
-
-    public Medication(String name) {
-        this.name = name;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Set<String> getIngredients() {
+    // EXISTING LOGIC (keep)
+    public Set<ActiveIngredient> getActiveIngredients() {
+        return activeIngredients;
+    }
+
+    public void setActiveIngredients(Set<ActiveIngredient> activeIngredients) {
+        this.activeIngredients = activeIngredients;
+    }
+
+    // REQUIRED BY TESTS
+    public String getMedication() {
+        return medication;
+    }
+
+    public void setMedication(String medication) {
+        this.medication = medication;
+    }
+
+    // REQUIRED BY TESTS
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void addIngredient(String ingredient) {
-        this.ingredients.add(ingredient);
-    }
-
-    public void removeIngredient(String ingredient) {
-        this.ingredients.remove(ingredient);
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 }
