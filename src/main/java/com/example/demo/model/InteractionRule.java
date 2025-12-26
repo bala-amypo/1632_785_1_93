@@ -1,46 +1,11 @@
-// package com.example.demo.model;
+package com.example.demo.model;
 
-// import jakarta.persistence.Entity;
-// import jakarta.persistence.GeneratedValue;
-// import jakarta.persistence.GenerationType;
-// import jakarta.persistence.Id;
-// import jakarta.persistence.ManyToOne;
-// import jakarta.persistence.Table;
-
-// import lombok.Data;
-// import lombok.NoArgsConstructor;
-
-// @Entity
-// @Table(name = "interaction_rules")
-// @Data
-// @NoArgsConstructor
-// public class InteractionRule {
-
-//     @Id
-//     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//     private Long id;
-
-//     @ManyToOne
-//     private ActiveIngredient ingredientA;
-
-//     @ManyToOne
-//     private ActiveIngredient ingredientB;
-
-//     private String severity;
-//     private String description;
-
-//     // ✅ Constructor REQUIRED by test cases (WITHOUT id)
-//     public InteractionRule(ActiveIngredient ingredientA,
-//                            ActiveIngredient ingredientB,
-//                            String severity,
-//                            String description) {
-//         this.ingredientA = ingredientA;
-//         this.ingredientB = ingredientB;
-//         this.severity = severity;
-//         this.description = description;
-//     }
-// }
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 @Table(name = "interaction_rules")
@@ -59,20 +24,40 @@ public class InteractionRule {
     private String severity;
     private String description;
 
-    public InteractionRule() {}
+    public InteractionRule() {
+    }
 
-    public InteractionRule(ActiveIngredient a, ActiveIngredient b,
-                           String severity, String description) {
-        this.ingredientA = a;
-        this.ingredientB = b;
+    public InteractionRule(ActiveIngredient ingredientA,
+                           ActiveIngredient ingredientB,
+                           String severity,
+                           String description) {
+        this.ingredientA = ingredientA;
+        this.ingredientB = ingredientB;
         this.severity = severity;
         this.description = description;
     }
 
-    // getters/setters
-    public String getSeverity() { return severity; }
-    public void setSeverity(String severity) { this.severity = severity; }
+    public Long getId() {
+        return id;
+    }
 
-    public ActiveIngredient getIngredientA() { return ingredientA; }
-    public ActiveIngredient getIngredientB() { return ingredientB; }
+    public ActiveIngredient getIngredientA() {
+        return ingredientA;
+    }
+
+    public ActiveIngredient getIngredientB() {
+        return ingredientB;
+    }
+
+    public String getSeverity() {
+        return severity;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
 }
