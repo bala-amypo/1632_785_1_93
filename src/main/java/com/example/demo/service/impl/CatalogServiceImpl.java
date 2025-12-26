@@ -15,11 +15,22 @@ public class CatalogServiceImpl implements CatalogService {
     @Autowired
     private MedicationRepository medicationRepository;
 
-    // EXISTING METHODS — keep them
+    // ===== EXISTING METHODS (UNCHANGED) =====
 
-    // ✅ REQUIRED by interface (ADD THIS)
+    @Override
+    public Medication getMedicationById(Long id) {
+        return medicationRepository.findById(id).orElse(null);
+    }
+
     @Override
     public List<Medication> getAllMedications() {
         return medicationRepository.findAll();
+    }
+
+    // ===== REQUIRED BY INTERFACE (ADDED – DO NOT REMOVE) =====
+
+    @Override
+    public Medication addMedication(Medication medication) {
+        return medicationRepository.save(medication);
     }
 }
