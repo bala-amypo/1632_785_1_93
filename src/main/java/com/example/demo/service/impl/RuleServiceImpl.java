@@ -86,3 +86,23 @@
 
 
 
+package com.example.demo.service.impl;
+
+import org.springframework.stereotype.Service;
+import com.example.demo.repository.InteractionRuleRepository;
+import com.example.demo.service.RuleService;
+
+@Service
+public class RuleServiceImpl implements RuleService {
+
+    private InteractionRuleRepository ruleRepository;
+
+    // REQUIRED BY TESTS
+    public RuleServiceImpl() {
+    }
+
+    // REQUIRED BY TESTS
+    public RuleServiceImpl(InteractionRuleRepository ruleRepository) {
+        this.ruleRepository = ruleRepository;
+    }
+}
