@@ -23,6 +23,11 @@ public class Medication {
     @ElementCollection
     private Set<String> ingredients = new HashSet<>();
 
+    private String medication;
+    private String ingredients;
+
+
+
     public Medication() {
     }
 
