@@ -43,48 +43,34 @@ public class SecurityConfig {
 }
 
 
+package com.example.demo.config;
 
-// package com.example.demo.security;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.SecurityFilterChain;
 
-// import org.springframework.context.annotation.Bean;
-// import org.springframework.context.annotation.Configuration;
-// import org.springframework.security.authentication.AuthenticationManager;
-// import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-// import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-// import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-// import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-// import org.springframework.security.crypto.password.PasswordEncoder;
-// import org.springframework.security.web.SecurityFilterChain;
-// import org.springframework.security.config.http.SessionCreationPolicy;
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
 
-// @Configuration
-// @EnableWebSecurity
-// public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf(csrf -> csrf.disable()) // Disable CSRF for APIs
+            .authorizeHttpRequests(auth -> auth
+                // 1. PERMIT SWAGGER AND API DOCS (This is why your UI is empty)
+                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                // 2. PERMIT AUTH ENDPOINTS
+                .requestMatchers("/auth/**").permitAll()
+                // 3. SECURE EVERYTHING ELSE
+                .anyRequest().authenticated()
+            )
+            // Since you use JWT, set session to stateless
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
-//     @Bean
-//     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//         http
-//             .csrf(csrf -> csrf.disable())
-//             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//             .authorizeHttpRequests(auth -> auth
-//                 .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-//                 .requestMatchers("/auth/**").permitAll() 
-//                 .anyRequest().authenticated()
-//             );
-        
-//         return http.build();
-//     }
-
-//     @Bean
-//     public PasswordEncoder passwordEncoder() {
-//         return new BCryptPasswordEncoder();
-//     }
-
-//     // Add this to prevent 500 errors during authentication setup
-//     @Bean
-//     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
-//         return config.getAuthenticationManager();
-//     }
-// }
-
-
+        return http.build();
+    }
+}
