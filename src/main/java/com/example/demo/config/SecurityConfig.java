@@ -39,7 +39,7 @@ public class SecurityConfig {
         http
             // Disable CSRF for stateless JWT
             .csrf(csrf -> csrf.disable())
-
+        
             // Use stateless session (JWT)
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
