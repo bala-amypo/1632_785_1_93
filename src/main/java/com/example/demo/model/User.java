@@ -16,7 +16,7 @@ public class User {
     
     private String password;
     
-    private String role = "USER"; // Default value (Rule 2.1)
+    private String role = "USER"; 
 
 
     public User() {}

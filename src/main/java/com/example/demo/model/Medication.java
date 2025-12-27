@@ -23,16 +23,15 @@ public class Medication {
     )
     private Set<ActiveIngredient> ingredients = new HashSet<>();
 
-    // No-arg constructor (Rule 2.3)
+  
     public Medication() {}
 
-    // Field constructor (Rule 2.3)
+    
     public Medication(String name) {
         this.name = name;
         this.ingredients = new HashSet<>();
     }
 
-    // Helper methods for Many-to-Many management (Rule 2.3 and Test 30)
     public void addIngredient(ActiveIngredient ingredient) {
         this.ingredients.add(ingredient);
     }
@@ -41,7 +40,7 @@ public class Medication {
         this.ingredients.remove(ingredient);
     }
 
-    // Getters and Setters
+   
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

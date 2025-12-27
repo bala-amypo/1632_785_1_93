@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MedicationRepository extends JpaRepository<Medication, Long> {
-    // Standard JpaRepository provides save, findById, and findAll (used in Test 38)
+   
 }

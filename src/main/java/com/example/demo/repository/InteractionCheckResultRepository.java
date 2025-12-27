@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InteractionCheckResultRepository extends JpaRepository<InteractionCheckResult, Long> {
-    // Standard JpaRepository provides save, findById, and findAll
+    
 }

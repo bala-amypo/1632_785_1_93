@@ -18,13 +18,13 @@ public class InteractionRule {
     @JoinColumn(name = "ingredient_b_id")
     private ActiveIngredient ingredientB;
 
-    private String severity; // MINOR, MODERATE, MAJOR
+    private String severity; 
     private String description;
 
-    // No-arg constructor (Rule 2.4)
+    
     public InteractionRule() {}
 
-    // Field constructor (Rule 2.4)
+  
     public InteractionRule(ActiveIngredient ingredientA, ActiveIngredient ingredientB, String severity, String description) {
         this.ingredientA = ingredientA;
         this.ingredientB = ingredientB;
@@ -32,7 +32,7 @@ public class InteractionRule {
         this.description = description;
     }
 
-    // Getters and Setters
+   
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

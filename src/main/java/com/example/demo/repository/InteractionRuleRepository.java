@@ -12,11 +12,10 @@ import java.util.Optional;
 @Repository
 public interface InteractionRuleRepository extends JpaRepository<InteractionRule, Long> {
 
-    // Returns rules involving a specific ingredient in either position (Rule 4.4 / Test 36)
     @Query("SELECT r FROM InteractionRule r WHERE r.ingredientA.id = :id OR r.ingredientB.id = :id")
     List<InteractionRule> findByIngredientId(@Param("id") Long ingredientId);
 
-    // Retrieves a rule for an unordered ingredient pair (Rule 4.4 / Test 37)
+    
     @Query("SELECT r FROM InteractionRule r WHERE " +
            "(r.ingredientA.id = :id1 AND r.ingredientB.id = :id2) OR " +
            "(r.ingredientA.id = :id2 AND r.ingredientB.id = :id1)")
