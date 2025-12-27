@@ -51,33 +51,3 @@ return id;
 
 
 
-// package com.example.demo.model;
-
-// import jakarta.persistence.*;
-// import lombok.Data;
-// import lombok.NoArgsConstructor;
-
-// @Entity
-// @Table(name = "users")
-// @Data
-// @NoArgsConstructor
-// public class User {
-//     @Id
-//     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//     private Long id;
-    
-//     private String name;
-    
-//     @Column(unique = true)
-//     private String email;
-    
-//     private String password;
-    
-//     private String role = "USER";
-
-//     public User(String name, String email, String password) {
-//         this.name = name;
-//         this.email = email;
-//         this.password = password;
-//     }
-// }
