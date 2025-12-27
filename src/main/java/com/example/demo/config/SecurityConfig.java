@@ -50,6 +50,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.http.SessionCreationPolicy;
 
@@ -60,17 +62,23 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable()) // Disable CSRF for API usage
+            .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                // Allow public access to Swagger UI and API Docs
+                // Permitting Swagger UI and API Docs
                 .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-                // Ensure auth endpoints (login/register) are also public
-                .requestMatchers("/api/auth/**").permitAll() 
-                // All other endpoints require a JWT token
+                // Permitting Auth endpoints (Notice: your controller uses /auth, not /api/auth)
+                .requestMatchers("/auth/**").permitAll() 
+                // All other requests need authentication
                 .anyRequest().authenticated()
             );
         
         return http.build();
+    }
+
+    // THIS FIXES THE ERROR: It defines the PasswordEncoder bean
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }
