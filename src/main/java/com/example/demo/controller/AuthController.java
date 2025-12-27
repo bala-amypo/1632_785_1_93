@@ -1,40 +1,3 @@
-// package com.example.demo.controller;
-
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.RequestBody;
-// import org.springframework.web.bind.annotation.RestController;
-
-// import com.example.demo.model.User;
-// import com.example.demo.service.UserService;
-
-// @RestController
-// public class AuthController {
-
-//     @Autowired
-//     private UserService userService;
-
-//     @PostMapping("/register")
-//     public User register(@RequestBody User user){
-//         return userService.register(user);
-//     }
-
-//     @PostMapping("/login")
-//     public String login(@RequestBody User user) {
-
-//         User dbUser = userService.findByEmail(user.getEmail());
-
-//         if (dbUser != null && dbUser.getPassword().equals(user.getPassword())) {
-//             return "Login Successful";
-//         }
-        
-//         return "Invalid Credentials";
-//     }
-// }
-
-
-
-
 package com.example.demo.controller;
 
 import com.example.demo.dto.LoginRequest;
@@ -60,7 +23,7 @@ public class AuthController {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
 
-    // Constructor injection (Rule 1.1)
+   
     public AuthController(UserService userService, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
