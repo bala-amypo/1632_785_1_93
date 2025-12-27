@@ -13,7 +13,6 @@ public class CatalogServiceImpl implements CatalogService {
     private ActiveIngredientRepository ingredientRepository;
     private MedicationRepository medicationRepository;
 
-    // MANDATORY: Add this to pass Test Case line 251
     public CatalogServiceImpl() {}
 
     public CatalogServiceImpl(ActiveIngredientRepository ingredientRepository, MedicationRepository medicationRepository) {

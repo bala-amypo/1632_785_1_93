@@ -10,7 +10,7 @@ import java.util.List;
 public class RuleServiceImpl implements RuleService {
     private InteractionRuleRepository ruleRepository;
 
-    // MANDATORY: Add this to pass Test Case line 252
+  
     public RuleServiceImpl() {}
 
     public RuleServiceImpl(InteractionRuleRepository ruleRepository) {

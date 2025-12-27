@@ -12,10 +12,10 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
 
-    // MANDATORY: Add this to pass Test Case line 250
+    
     public UserServiceImpl() {}
 
-    // Constructor injection for Spring
+    
     public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;

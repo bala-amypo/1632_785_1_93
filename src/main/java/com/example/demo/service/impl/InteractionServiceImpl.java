@@ -15,7 +15,7 @@ public class InteractionServiceImpl implements InteractionService {
     private InteractionRuleRepository ruleRepository;
     private InteractionCheckResultRepository resultRepository;
 
-    // MANDATORY: Add this to pass Test Case line 253
+    
     public InteractionServiceImpl() {}
 
     public InteractionServiceImpl(MedicationRepository medicationRepository, 
