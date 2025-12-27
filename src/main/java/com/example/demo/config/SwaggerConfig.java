@@ -15,7 +15,7 @@ public class SwaggerConfig {
         SecurityScheme bearerAuth=new SecurityScheme()
         .type(SecurityScheme.Type.HTTP)
         .scheme("bearer")
-        .bearerFormat("")
+        .bearerFormat("JWT");
         return new OpenAPI()
                 // You need to change the port as per your server
                 .servers(List.of(
