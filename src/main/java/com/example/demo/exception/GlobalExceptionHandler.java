@@ -21,12 +21,8 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGlobal(Exception ex, WebRequest request) {
-        ErrorResponse err = new ErrorResponse(
-                LocalDateTime.now(), 
-                HttpStatus.INTERNAL_SERVER_ERROR.value(), 
-                "Internal Error", 
-                ex.getMessage(), 
-                request.getDescription(false));
+        ErrorResponse err = new ErrorResponse(LocalDateTime.now(), HttpStatus.INTERNAL_SERVER_ERROR.value(), 
+                "Internal Error",ex.getMessage(),request.getDescription(false));
         return new ResponseEntity<>(err, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

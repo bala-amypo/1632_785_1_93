@@ -13,14 +13,14 @@ public class InteractionCheckResult {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String medications; // Comma-separated names
+    private String medications; 
 
     @Column(columnDefinition = "TEXT")
-    private String interactions; // JSON Summary
+    private String interactions; 
 
     private LocalDateTime checkedAt;
 
-    // No-arg constructor with auto-timestamp (Rule 2.5 and Test 45/60)
+   
     public InteractionCheckResult() {
         this.checkedAt = LocalDateTime.now();
     }
