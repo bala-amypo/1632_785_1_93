@@ -49,13 +49,13 @@ import com.example.demo.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-@Service // CRITICAL: This tells Spring to manage this bean
+@Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    // Constructor Injection is the best way to ensure dependencies are not null
+    // Fixes the "null userRepository" error
     public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User register(User user) {
-        // ENCRYPT the password before saving to the database
+        // Encode password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
