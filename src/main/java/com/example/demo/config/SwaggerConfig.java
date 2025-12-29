@@ -1,76 +1,29 @@
-// package com.example.demo.config;
-
-// import io.swagger.v3.oas.models.OpenAPI;
-// import io.swagger.v3.oas.models.security.SecurityScheme;
-// import io.swagger.v3.oas.models.servers.Server;
-// import org.springframework.context.annotation.Bean;
-// import org.springframework.context.annotation.Configuration;
-// import java.util.List;
-
-// @Configuration
-// public class SwaggerConfig {
-
-//     @Bean
-//     public OpenAPI customOpenAPI() {
-        
-//         SecurityScheme bearerAuth=new SecurityScheme()
-//         .type(SecurityScheme.Type.HTTP)
-//         .scheme("bearer")
-//         .bearerFormat("JWT");
-
-//         return new OpenAPI()
-//                 // You need to change the port as per your server
-//                 .servers(List.of(
-//                         new Server().url("https://9157.pro604cr.amypo.ai/")
-//                 ));
-//         }
-// }
-
-
-
 package com.example.demo.config;
 
-import java.util.List;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.Components;
-import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import java.util.List;
 
 @Configuration
 public class SwaggerConfig {
 
-    public static final String SECURITY_SCHEME_NAME = "bearerAuth";
-
     @Bean
     public OpenAPI customOpenAPI() {
+        
+        SecurityScheme bearerAuth=new SecurityScheme()
+        .type(SecurityScheme.Type.HTTP)
+        .scheme("bearer")
+        .bearerFormat("JWT");
 
         return new OpenAPI()
-                // ✅ Server configuration (you already had this)
+                // You need to change the port as per your server
                 .servers(List.of(
                         new Server().url("https://9157.pro604cr.amypo.ai/")
-                ))
-
-                // ✅ THIS enables the Authorize button
-                .addSecurityItem(
-                        new SecurityRequirement().addList(SECURITY_SCHEME_NAME)
-                )
-
-                // ✅ JWT Bearer definition
-                .components(
-                        new Components()
-                                .addSecuritySchemes(
-                                        SECURITY_SCHEME_NAME,
-                                        new SecurityScheme()
-                                                .name("Authorization")
-                                                .type(SecurityScheme.Type.HTTP)
-                                                .scheme("bearer")
-                                                .bearerFormat("JWT")
-                                )
-                );
-    }
+                ));
+        }
 }
+
+
